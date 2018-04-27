@@ -1,6 +1,8 @@
 (()=>{
     'use stric'
-    angular.module('RoloTravel').service('servicioUsuarios', servicioUsuarios);
+    angular
+    .module('RoloTravel')
+    .service('servicioUsuarios', servicioUsuarios);
 
     servicioUsuarios.$inject = ['$http','$log', 'dataStorageFactory']
 

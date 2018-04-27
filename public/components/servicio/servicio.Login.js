@@ -1,6 +1,8 @@
 (() => {
     'use strict';
-    angular.module('RoloTravel').service('loginService', loginService);
+    angular
+    .module('RoloTravel')
+    .service('loginService', loginService);
 
     loginService.$inject = ['servicioUsuarios', 'dataStorageFactory'];
 

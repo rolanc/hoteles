@@ -13,14 +13,7 @@
                 templateUrl: './components/landingPage/landingPage.view.html',
                 data: {
                     pageTitle: 'Rolo Travel'
-                },
-                resolve: {
-                    load: ['$ocLazyLoad', ($ocLazyLoad) => {
-                        return $ocLazyLoad.load('./components/landingPage/landingPage.controller.js')
-                    }]
-                },
-                controller: 'landingPageController',
-                controllerAs: 'vm'
+                }
             })
 
             .state('inicioSesion', {
@@ -56,21 +49,6 @@
             .state('main', {
                 url: '/main',
                 templateUrl: './components/main/main.view.html',
-                resolve: {
-                    load: ['$ocLazyLoad', ($ocLazyLoad) => {
-                        return $ocLazyLoad.load('./components/main/main.controller.js')
-                    }]
-                },
-                controller: 'controladorMain',
-                controllerAs: 'vm'
-            })
-
-            .state('main', {
-                url: '/home',
-                templateUrl: './components/main/principal.main/home.view.html',
-                data: {
-                    pageTitle: 'Pagina principal | Rolo Travel'
-                },
                 resolve: {
                     load: ['$ocLazyLoad', ($ocLazyLoad) => {
                         return $ocLazyLoad.load('./components/main/main.controller.js')
@@ -128,14 +106,6 @@
                 controllerAs: 'vm'
             })
 
-            .state('main.verHotel', {
-                url: '/viewHotel',
-                templateUrl: './components/hoteles/PerfilHotel/perfilHotel.view.html',
-                data: {
-                    pageTitle: 'Ver hoteles | Rolo Travel'
-                }
-            })
-
             .state('main.listarUsuarios', {
                 url: '/listUsers',
                 templateUrl: './components/usuarios/Cliente/listarCliente/listarCliente.view.html',
@@ -153,60 +123,6 @@
                 controller: 'controladorListaUsuarios',
                 controllerAs: 'vm'
             })
-
-            .state('main.verPerfil', {
-                url: '/profileClient',
-                templateUrl: './components/usuarios/Cliente/PerfilCliente/perfilCliene.view.html',
-                data: {
-                    pageTitle: 'Listar Clientes'
-                },
-            })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-            
-
-            
-
-            
-
-            
-
-
-            
-
-
-            .state('modificarClientes', {
-                url: '/modificarClientes',
-                templateUrl: './components/usuarios/Cliente/ModificarCliente/modificarCliente.view.html',
-                data: {
-                    pageTitle: 'Listar Clientes'
-                },
-                resolve: {
-                    load: ['$ocLazyLoad', ($ocLazyLoad) => {
-                        return $ocLazyLoad.load('./components/usuarios/Cliente/ModificarCliente/modificarCliente.controller.js')
-                    }]
-                },
-                controller: '',
-                controllerAs: 'vm'
-            })
-
-            
-
-
 
         $urlRouterProvider.otherwise('/');
     }

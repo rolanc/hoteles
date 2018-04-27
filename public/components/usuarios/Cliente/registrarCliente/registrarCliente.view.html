@@ -1,16 +1,5 @@
 <main class="row" id="registroClientes">
-    <section class="col-md-6 imageSection">
-        <div class="row" id="imagen">
-            <a href="" ui-sref="landingPage" class="text-white link mt-3 ml-5">
-                <i class="fas fa-chevron-left"></i>
-                <strong>Volver</strong>
-            </a>
-            <div class="mx-auto my-8">
-                <img src="../../../../sources/imgs/logo.png">
-            </div>
-         </div>
-    </section>
-    <section class="col-md-6">
+    <section class="col-md-12">
         
             <div class="mt-3 mb-0">
                 <div class="col-md-12 mb-5">
@@ -27,7 +16,7 @@
                                 required>
                             <div ng-messages="frmRegistroClientes.campoNombre1.$error" role="alert">
                                 <div ng-message="required">
-                                    <small class="form-text text-info">Este campo es requerido</small>
+                                    <small class="form-text text-danger">Este campo es requerido</small>
                                 </div>
                                 <div ng-message="pattern">
                                     <small class="form-text text-muted">Formato incorrecto</small>
@@ -46,7 +35,7 @@
                                 required>
                             <div ng-messages="frmRegistroClientes.campoApellido1.$error" role="alert">
                                 <div ng-message="required">
-                                    <small class="form-text text-info">Este campo es requerido</small>
+                                    <small class="form-text text-danger">Este campo es requerido</small>
                                 </div>
                                 <div ng-message="pattern">
                                     <small class="form-text text-muted">Formato incorrecto</small>
@@ -65,7 +54,7 @@
                             <input type="number" class="form-control" id="txtCedula" name="campoCedula" ng-model="vm.nuevoUsuario.cedula" required>
                             <div ng-messages="frmRegistroClientes.campoCedula.$error" role="alert">
                                 <div ng-message="required">
-                                    <small class="form-text text-info">Este campo es requerido</small>
+                                    <small class="form-text text-danger">Este campo es requerido</small>
                                 </div>
                                 <div ng-message="pattern">
                                     <small class="form-text text-muted">Formato incorrecto</small>
@@ -77,7 +66,7 @@
                             <input type="number" class="form-control" id="txtTelefono" name="campoTelefono" ng-model="vm.nuevoUsuario.telefono" required>
                             <div ng-messages="frmRegistroClientes.campoTelefono.$error" role="alert">
                                 <div ng-message="required">
-                                    <small class="form-text text-info">Este campo es requerido</small>
+                                    <small class="form-text text-danger">Este campo es requerido</small>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +78,7 @@
                                 required>
                             <div ng-messages="frmRegistroClientes.campoFechaNacimiento.$error" role="alert">
                                 <div ng-message="required">
-                                    <small class="form-text text-info">Este campo es requerido</small>
+                                    <small class="form-text text-danger">Este campo es requerido</small>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +87,7 @@
                             <input type="email" class="form-control" id="txtEmail" name="campoCorreo" ng-model="vm.nuevoUsuario.correo" required>
                             <div ng-messages="frmRegistroClientes.campoCorreo.$error" role="alert">
                                 <div ng-message="required">
-                                    <small class="form-text text-info">Este campo es requerido</small>
+                                    <small class="form-text text-danger">Este campo es requerido</small>
                                 </div>
                             </div>
                         </div>
@@ -110,7 +99,7 @@
                                 required>
                             <div ng-messages="frmRegistroClientes.campoCorreo.$error" role="alert">
                                 <div ng-message="required">
-                                    <small class="form-text text-info">Este campo es requerido</small>
+                                    <small class="form-text text-danger">Este campo es requerido</small>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +110,7 @@
                     </div>
                     <div class="row">
                         <div class="mx-auto col-md-3 mt-3">
-                            <button type="submit" class="btn btn-info">Registrar cliente</button>
+                            <button type="submit" class="btn btn-success">Registrar cliente</button>
                         </div>
                     </div>
                 </form>

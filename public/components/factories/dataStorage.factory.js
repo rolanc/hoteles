@@ -1,8 +1,8 @@
 (()=>{
     'use strict';
     angular
-    .module ('RoloTravel')
-    .factory ('dataStorageFactory', dataStorageFactory);
+    .module('RoloTravel')
+    .factory('dataStorageFactory', dataStorageFactory);
 
     function dataStorageFactory(){
         const dataAPI = {

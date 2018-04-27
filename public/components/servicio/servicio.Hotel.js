@@ -1,6 +1,8 @@
 (() => {
     
-    angular.module('RoloTravel').service('ServicioHotel', ServicioHotel);
+    angular
+    .module('RoloTravel')
+    .service('ServicioHotel', ServicioHotel);
 
     ServicioHotel.$inject = ['$http', '$log', 'dataStorageFactory']
 

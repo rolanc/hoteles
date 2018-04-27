@@ -10,7 +10,7 @@
                 <input type="correo" id="txtcorreo" class="form-control" name="campocorreo" ng-model="vm.datos.correo" required>
                 <div ng-messages="formInicioSesion.campocorreo.$error">
                     <div ng-message="required">
-                        <small class="form-text text-info">Este campo es requerido</small>
+                        <small class="form-text">Este campo es requerido</small>
                     </div>
                 </div>
             </div>
@@ -20,16 +20,12 @@
                     required>
                 <div ng-messages="formInicioSesion.campocontrasenna.$error">
                     <div ng-message="required">
-                        <small class="form-text text-info">Este campo es requerido</small>
+                        <small class="form-text">Este campo es requerido</small>
                     </div>
                 </div>
             </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" name="showPassword" ng-model="vm.check" ng-change="vm.changeType(vm.check)">
-                <label class="form-check-label" for="exampleCheck1">Mostrar Contraseña</label>
-            </div>
             <div class="mt-3 text-center">
-                <button type="submit" class="btn btn-info">Iniciar Sesión</button>
+                <button type="submit" class="btn btn-success">Iniciar Sesión</button>
             </div>
         </form>
     </section>
