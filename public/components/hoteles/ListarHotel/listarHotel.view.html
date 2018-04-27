@@ -1,0 +1,31 @@
+<section>
+    <a href="" ui-sref="main" class="text-black mt-5 ml-3">
+        <i class="fas fa-chevron-left"></i>
+        <strong>Volver</strong>
+    </a>
+    <div class="mt-2 mb-0">
+        <div class="col-md-12 mb-5">
+            <h1 id="tituloPrincipal" class="mt-1">Lista de hoteles</h1>
+            <p class="texto-muted">Lista de hoteles registrados dentro de Rolo Travel</p>
+        </div>
+    </div>
+
+    <div ng-repeat="hotel in vm.listaHoteles">
+        <div class="row border">
+            <div class="col-3">
+                <img src="{{hotel.getFoto()}}" class="rounded mt-5" alt="{{hotel.getNombreHotel()}}" width="100%">
+            </div>
+            <div class="col-8 p-3">
+                <h5 class="card-title text-capitalize border-bottom">{{hotel.getNombreHotel()}}</h5>
+                <p>
+                    <strong>Tipo de hotel:</strong> {{hotel.getTipoHotel()}}</p>
+                <p>
+                    <strong>Ubicación:</strong> {{hotel.getProvincia().name}}, {{hotel.getCanton().name}}</p>
+                <p>
+                    <strong>Dirección:</strong> {{hotel.getDireccion()}}</p>
+                <button type="button" class="btn btn-info" ng-click="vm.verHotel(hotel)">Ver Hotel</button>
+                <button type="button" class="btn btn-secondary" ng-click="vm.editar(hotel)">Editar Hotel</button>
+            </div>
+        </div>
+    </div>
+</section>

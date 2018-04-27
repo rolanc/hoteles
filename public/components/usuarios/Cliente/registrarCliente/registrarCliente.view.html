@@ -1,0 +1,131 @@
+<main class="row" id="registroClientes">
+    <section class="col-md-6 imageSection">
+        <div class="row" id="imagen">
+            <a href="" ui-sref="landingPage" class="text-white link mt-3 ml-5">
+                <i class="fas fa-chevron-left"></i>
+                <strong>Volver</strong>
+            </a>
+            <div class="mx-auto my-8">
+                <img src="../../../../sources/imgs/logo.png">
+            </div>
+         </div>
+    </section>
+    <section class="col-md-6">
+        
+            <div class="mt-3 mb-0">
+                <div class="col-md-12 mb-5">
+                    <h1 id="tituloPrincipal" class="text-center mt-1">Registro</h1>
+                    <p class="text-muted text-center texto-descripcion">Ingrese los datos solicitados para registrarse dentro de la plataforma de Rolo Travel</p>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <form name="frmRegistroClientes" ng-submit="vm.registrarUsuario(vm.nuevoUsuario)" novalidate autocomplete="off">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="txtNombre">Primer nombre:</label>
+                            <input type="text" class="form-control" id="txtNombre" name="campoNombre1" pattern="[ñáéíóúA-Za-z ]+" ng-model="vm.nuevoUsuario.primerNombre"
+                                required>
+                            <div ng-messages="frmRegistroClientes.campoNombre1.$error" role="alert">
+                                <div ng-message="required">
+                                    <small class="form-text text-info">Este campo es requerido</small>
+                                </div>
+                                <div ng-message="pattern">
+                                    <small class="form-text text-muted">Formato incorrecto</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtSegundoNombre">Segundo nombre:</label>
+                            <input type="text" class="form-control" id="txtSegundoNombre" ng-model="vm.nuevoUsuario.segundoNombre">
+                            <small class="form-text text">*Campo opcional</small>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="txtPrimerApellido">Primer apellido:</label>
+                            <input type="text" class="form-control" id="txtPrimerApellido" pattern="[ñáéíóúA-Za-z ]+" name="campoApellido1" ng-model="vm.nuevoUsuario.primerApellido"
+                                required>
+                            <div ng-messages="frmRegistroClientes.campoApellido1.$error" role="alert">
+                                <div ng-message="required">
+                                    <small class="form-text text-info">Este campo es requerido</small>
+                                </div>
+                                <div ng-message="pattern">
+                                    <small class="form-text text-muted">Formato incorrecto</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtSegundoApellido">Segundo apellido:</label>
+                            <input type="text" class="form-control" id="txtSegundoApellido" ng-model="vm.nuevoUsuario.segundoApellido">
+                            <small class="form-text text">*Campo opcional</small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="txtCedula">Número de cédula:</label>
+                            <input type="number" class="form-control" id="txtCedula" name="campoCedula" ng-model="vm.nuevoUsuario.cedula" required>
+                            <div ng-messages="frmRegistroClientes.campoCedula.$error" role="alert">
+                                <div ng-message="required">
+                                    <small class="form-text text-info">Este campo es requerido</small>
+                                </div>
+                                <div ng-message="pattern">
+                                    <small class="form-text text-muted">Formato incorrecto</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtTelefono">Teléfono:</label>
+                            <input type="number" class="form-control" id="txtTelefono" name="campoTelefono" ng-model="vm.nuevoUsuario.telefono" required>
+                            <div ng-messages="frmRegistroClientes.campoTelefono.$error" role="alert">
+                                <div ng-message="required">
+                                    <small class="form-text text-info">Este campo es requerido</small>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class = "row">
+                        <div class="form-group col-md-6">
+                            <label for="txtFechaNacimiento">Fecha de nacimiento:</label>
+                            <input type="date" class="form-control" id="txtFechaNacimiento" name="campoFechaNacimiento" ng-model="vm.nuevoUsuario.fecha"
+                                required>
+                            <div ng-messages="frmRegistroClientes.campoFechaNacimiento.$error" role="alert">
+                                <div ng-message="required">
+                                    <small class="form-text text-info">Este campo es requerido</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtEmail">Correo electrónico:</label>
+                            <input type="email" class="form-control" id="txtEmail" name="campoCorreo" ng-model="vm.nuevoUsuario.correo" required>
+                            <div ng-messages="frmRegistroClientes.campoCorreo.$error" role="alert">
+                                <div ng-message="required">
+                                    <small class="form-text text-info">Este campo es requerido</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="txtEmail">Contraseña:</label>
+                            <input type="password" class="form-control" id="txtPassword" name="campoContrasenna" ng-model="vm.nuevoUsuario.contrasenna"
+                                required>
+                            <div ng-messages="frmRegistroClientes.campoCorreo.$error" role="alert">
+                                <div ng-message="required">
+                                    <small class="form-text text-info">Este campo es requerido</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                                <label for="txtConfirmContrasenna">Confirmar contraseña</label>
+                                <input type="password" id="txtConfirmContrasenna" class="form-control" name="campoConfirmContrasenna" ng-model="vm.nuevoUsuario.contrasenna" required>
+                              </div>
+                    </div>
+                    <div class="row">
+                        <div class="mx-auto col-md-3 mt-3">
+                            <button type="submit" class="btn btn-info">Registrar cliente</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+    </section>
+</main>

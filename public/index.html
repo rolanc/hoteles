@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="RoloTravel">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="Rolo">
+  <title page-title></title>
+  <link rel="shortcut icon" href="./sources/img/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./sources/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="./sources/styles.min.css">
+</head>
+
+<body>
+  <div ui-view></div>
+
+  <!-- Dependencias -->
+  <script src="./lib/bootstrap/jquery.min.js"></script>
+  <script src="./lib/bootstrap/popper.min.js"></script>
+  <script src="./lib/bootstrap/bootstrap.min.js"></script>
+  <script src="./lib/sweetalert/sweetalert.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBp4XTWZNQeLUBVN0StYkMJs0Bz1UsrMyQ" type="text/javascript"></script>
+  <!-- Script de Angular -->
+  <script src="./lib/angular/angular.min.js"></script>
+    <!-- Dependencias de Agular -->
+    <script src="./lib/angular/routing/angular-ui-router.min.js"></script>
+    <script src="./lib/angular/routing/ocLazyLoad.min.js"></script>
+    <script src="./lib/angular/routing/page-title.min.js"></script>
+    <script src="./lib/angular/dependencies/angular-messages.min.js"></script>
+    <script src="./lib/angular/dependencies/angular-scroll.min.js"></script>
+    <script src="./lib/angular/dependencies/ng-file-upload.min.js"></script>
+    <script src="./lib/angular/dependencies/ng-file-upload-shim.min.js"></script>
+    <script src="./lib/angular/dependencies/ng-map.min.js"></script>
+    <script src="./lib/angular/dependencies/angular-animate.min.js"></script>
+    <!-- Script de la aplicación -->
+    <script src="./clases.js"></script>
+    <script src="./app.js"></script>
+    <script src="./route.js"></script>
+      <script src="./components/factories/dataStorage.factory.js"></script>
+      <script src="./components/servicio/servicio.Usuario.js"></script>
+      <script src="./components/servicio/servicio.Hotel.js"></script>
+      <script src="./components/servicio/servicio.Login.js"></script>
+      <script src="./components/servicio/servicio.Imagen.js"></script>
+      <script src="./components/directives/inputFile.directiva.js"></script>
+      <script src="./components/directives/header/header.directive.js"></script>
+      <script src="./components/directives/sidebar/sidebar.directiva.js"></script>
+
+</body>
+
+</html>

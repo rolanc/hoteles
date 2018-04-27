@@ -1,0 +1,76 @@
+@import './setings';
+// Tipografía de la aplicación
+@font-face {
+  font-family: 'montserrat';
+  src: url("./fonts/Montserrat_Thin.ttf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'montserrat';
+  src: url("./fonts/Montserrat_ExtraLight.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'montserrat';
+  src: url("./fonts/Montserrat_Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'montserrat';
+  src: url("./fonts/Montserrat_Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'montserrat';
+  src: url("./fonts/Montserrat_SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'montserrat';
+  src: url("./fonts/Montserrat_Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'montserrat';
+  src: url("./fonts/Montserrat_Black.ttf");
+  font-weight: 900;
+}
+
+body {
+  font-family: 'montserrat';
+  .row .container-fluid .col-md-6{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .active{
+    color: $primary-color !important;
+  }
+  .mt-6 {
+    margin-top: 11rem !important;
+  }
+  .bg-black{
+    background-color: $rest-color;
+  }
+  .text-white {
+    color: $white-color;
+  }
+  .text-black {
+    color: $rest-color;
+  }
+  .title {
+    font-size: 28px;
+  }
+  button {
+    text-decoration: none;
+    background: none;
+    border-bottom-color: $white-color;
+    padding: 1% 3%;
+    font-size: 2rem;
+  }
+}

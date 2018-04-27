@@ -1,0 +1,163 @@
+<section id="registroHoteles" class="row">
+  <div class="mt-5 mb-0">
+    <a href="" ui-sref="main" class="text-black link mt-3 ml-3">
+      <i class="fas fa-chevron-left"></i>
+      <strong>Volver</strong>
+    </a>
+    <div class="col-md-12 mb-5">
+      <h1 id="tituloPrincipal" class="mt-1">Registro de hoteles</h1>
+      <p class="text-center texto-descripcion">Ingrese los datos solicitados para registrar un hotel dentro de la plataforma de Rolo Travel</p>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <form ng-submit="vm.modificarHotel(vm.hotelPorModificar)" name="formRegisterHotel" novalidate autocomplete="off">
+
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="tipoHotel">Seleccione el tipo de hotel</label>
+          <select class="form-control" id="tipoHotel" name="tipoHotel" ng-model="vm.hotelPorModificar.tipoHotel" required>
+            <option value="De Montaña">De Montaña</option>
+            <option value="De Playa">De Playa</option>
+            <option value="De Cuidad">De Cuidad</option>
+          </select>
+          <div ng-messages="formRegisterHotel.tipoHotel.$error" role="alert">
+            <div ng-message="required">
+              <small class="form-text text-muted">Este campo es requerido</small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="txtname">Nombre del hotel</label>
+          <input type="text" id="txtname" class="form-control" name="campoNombre" ng-model="vm.hotelPorModificar.nombreHotel" required>
+          <div ng-messages="formRegisterHotel.campoNombre.$error" role="alert">
+            <div ng-message="required">
+              <small class="form-text text-muted">Este campo es requerido</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="form-group col-md-4">
+          <label for="sltProvincia">Provincia</label>
+          <select id="sltProvincia" class="form-control" name="sltProvincias" ng-change="vm.rellenarCantones(vm.hotelPorModificar.provincia._id)"
+            ng-options="provincia as provincia.name for provincia in vm.provincias track by provincia._id" ng-model="vm.hotelPorModificar.provincia"
+            required>
+            <option value="">-- Seleccione una Provincia --</option>
+          </select>
+          <div ng-messages="formRegistroUsuarios.sltProvincias.$error" role="alert">
+            <div ng-message="required">
+              <small class="form-text text-muted">Este campo es requerido</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="sltCanton">Cantón</label>
+          <select id="sltCanton" class="form-control" name="sltCantones" ng-change="vm.rellenarDistrito(vm.hotelPorModificar.canton._id)"
+            ng-options="canton as canton.name for canton in vm.cantones track by canton._id" ng-model="vm.hotelPorModificar.canton"
+            ng-disabled="!vm.hotelPorModificar.provincia" required>
+            <option value="">-- Seleccione un Cantón --</option>
+          </select>
+          <div ng-messages="formRegistroUsuarios.sltCantones.$error" role="alert">
+            <div ng-message="required">
+              <small class="form-text text-muted">Este campo es requerido</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="sltDistrito">Distrito</label>
+          <select id="sltDistrito" class="form-control" name="sltDistritos" ng-options="distrito as distrito.name for distrito in vm.distritos track by distrito._id"
+            ng-model="vm.hotelPorModificar.distrito" ng-disabled="!vm.hotelPorModificar.canton" required>
+            <option value="">-- Seleccione un Distrito --</option>
+          </select>
+          <div ng-messages="formRegistroUsuarios.sltDistritos.$error" role="alert">
+            <div ng-message="required">
+              <small class="form-text text-muted">Este campo es requerido</small>
+            </div>
+            <div ng-message="email">
+              <small class="form-text text-muted">EL formato del correo electrónico es incorrecto</small>
+            </div>
+            <div ng-message="maxlength">This field can be at most 15 characters long.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="form-group col-md-6">
+          <label for="txtNombre1">Dirección exacta del hotel</label>
+          <textarea id="txtNombre1" class="form-control" name="campoNombre" ng-model="vm.hotelPorModificar.direccion" required></textarea>
+          <div ng-messages="formRegisterHotel.campoNombre.$error" role="alert">
+            <div ng-message="required">
+              <small class="form-text text-muted">Este campo es requerido</small>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <ng-map id="map" center="vm.hotelPorModificar.latitud, vm.hotelPorModificar.longitud" styles="width: 100%; height: 20em;">
+        <marker position="vm.hotelPorModificar.latitud, vm.hotelPorModificar.longitud" draggable="true" on-dragend="vm.getCurrentLocation()"
+          coords="marker.coords" options="marker.options"></marker>
+      </ng-map>
+
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <h2>Contacto del hotel</h2>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="txtNombre2">Telefono del hotel</label>
+          <input type="text" id="txtNombre2" class="form-control" name="campoTelefonoHotel" ng-model="vm.hotelPorModificar.telefonoServicioCliente"
+            pattern="[0-9]+">
+          <div ng-messages="formRegisterHotel.campoTelefonoHotel.$error" role="alert">
+            <div ng-message="pattern">
+              <small class="form-text text-muted">Formato incorrecto</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="txtApellido1">Correo del hotel</label>
+          <input type="text" id="txtApellido1" class="form-control" name="campoCorreoHotel" ng-model="vm.hotelPorModificar.correoServicioCliente"
+            required>
+          <div ng-messages="formRegisterHotel.campoCorreoHotel.$error" role="alert">
+            <div ng-message="required">
+              <small class="form-text text-muted">Este campo es requerido</small>
+            </div>
+            <div ng-message="email">This field must be a valid email address.</div>
+            <div ng-message="maxlength">This field can be at most 15 characters long.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Contacto de reservaciones</h2>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="txtApellido2">Telefono de reservaciones</label>
+          <input type="text" id="txtApellido2" class="form-control" name="campoSegundoApellido" ng-model="vm.hotelPorModificar.telefonoReservacion">
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="txtphone">Correo de reservaciones</label>
+          <input type="text" id="txtphone" class="form-control" name="campoTelefono" ng-model="vm.hotelPorModificar.correoReservacion"
+            required>
+          <div ng-messages="formRegisterHotel.campoTelefono.$error" role="alert">
+            <div ng-message="required">
+              <small class="form-text text-muted">Este campo es requerido</small>
+            </div>
+            <div ng-message="email">This field must be a valid email address.</div>
+            <div ng-message="maxlength">This field can be at most 15 characters long.</div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn btn-info">Modificar Hotel</button>
+    </form>
+  </div>
+</section>

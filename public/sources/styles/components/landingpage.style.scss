@@ -1,0 +1,54 @@
+@import '../setings';
+#landingPageComponent {
+    .top-fixed {
+        position: fixed;
+        bottom: 3%;
+        right: 10px;
+        width: 50px;
+        border-radius: 25px;
+        background: #000;
+        height: 50px;
+        z-index: 1001;
+        box-shadow: 3px 4px rgba(68, 68, 68, .45);
+        &:active {
+            box-shadow: none;
+            right: 3px;
+            bottom: 3%;
+        }
+        .tipotop {
+            font-size: 2em;
+            color: $primary-color;
+            margin-left: 11px;
+        }
+    }
+    #banner {
+        background-image: url('./imgs/1.png'), $overlay-gradient;
+        background-blend-mode: overlay;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        p {
+            font-size: 1.2em;
+        }
+    }
+    #section-2{
+        h2{
+            color: $primary-color;
+        }
+        p{
+            font-size: 1.2em;
+        }
+    }
+    @media (max-width: 1392px) {
+        #banner {
+            background-size: cover;
+           
+        }
+    }
+    @media (max-width: 768px) {
+        #banner {
+            p {
+                font-size: 0.8em;
+            }
+        }
+    }
+}

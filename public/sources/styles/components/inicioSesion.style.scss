@@ -1,0 +1,23 @@
+@import '../setings';
+#loginComponent{
+    max-width: 100% !important;
+    .imageSection{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        .link{
+            font-size: 1.2rem;
+        }
+        #imagen{
+            background-image: url(./imgs/inicioSesion.png), $overlay-gradient;
+            background-blend-mode: overlay;
+            background-repeat: no-repeat;
+            background-size: cover;
+            .my-8{
+                margin: 17.5rem 0;
+            }
+        }
+    }
+    .mt-7{
+        margin-top: 11rem;
+    }
+}
